@@ -50,11 +50,15 @@ p{
 }
 
 .price {
+  margin: 7% 20%;
   border-radius: 0.5 rem; 
   overflow: hidden; 
-    @media only screen and (mid-width: 621.5rem){
-      display:grid; 
-    }
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  'community community'
+  'subscription why';
 }
 
 .price > * {
@@ -63,6 +67,7 @@ p{
 
 .community {
       background-color: var(--white);
+      grid-area: community;
   }
 
 .community h2 {
@@ -83,21 +88,23 @@ p{
 
 .subscription {
   background-color: var(--cyan);
+  color: var(--white);
+  grid-area: subscription;
 }
  
 .subscription__price {
-  align-items: center;
-  display: flex;
+  /*display: flex;*/
+  /*justify-content: flex-start;*/
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 0.25rem;
 }
 
-subscription__price span {
+.subscription__price span {
   font-size: 1rem;
   margin-left: 0.8rem;
   font-weight: normal; 
-  opacity: 0.8rem;
+  opacity: 0.8;
 }
 
 .subscription p {
@@ -117,6 +124,9 @@ subscription__price span {
 
 .why {
   background-color: var(--ltcyan);
+  color: var(--white);
+  grid-area: why;
+
 }
 
 .why ul {
@@ -129,3 +139,4 @@ subscription__price span {
   list-style-type: none;
   font-size: 0.85rem;
 }
+
